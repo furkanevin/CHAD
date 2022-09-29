@@ -306,6 +306,7 @@
     }
     .chat {
       flex: 2;
+      overflow-x: hidden;
       @include tablet {
         flex: 3;
       }
