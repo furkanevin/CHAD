@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CHAD/static/css/main.02ca78cf.css",
+    "main.js": "/CHAD/static/js/main.24af2ce9.js",
+    "index.html": "/CHAD/index.html",
+    "main.02ca78cf.css.map": "/CHAD/static/css/main.02ca78cf.css.map",
+    "main.24af2ce9.js.map": "/CHAD/static/js/main.24af2ce9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.02ca78cf.css",
+    "static/js/main.24af2ce9.js"
+  ]
+}
