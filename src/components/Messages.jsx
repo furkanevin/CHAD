@@ -17,6 +17,7 @@ const Messages = () => {
       unSub();
     };
   }, [data.chatId]);
+
   return (
     <div className="messages" id="scroll">
       {messages.map((m) => (
