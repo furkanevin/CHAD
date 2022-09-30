@@ -253,7 +253,10 @@
 
         .searchForm {
           padding: 10px;
+          display: flex;
+          justify-content: space-between;
           input {
+            width: 90%;
             background-color: transparent;
             border: none;
             color: white;
@@ -261,6 +264,17 @@
             &::placeholder {
               color: #ddddf7;
             }
+          }
+          button {
+            background-color: rgb(0, 173, 181);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
           }
         }
       }
@@ -306,33 +320,50 @@
     }
     .chat {
       flex: 2;
-      overflow-x: hidden;
+      overflow-x: auto;
       @include tablet {
         flex: 3;
       }
       font-family: 'Poppins', sans-serif;
       font-weight: 400;
+
       .search {
-        width: 90.9%;
-        border: none;
+        width: 87%;
         padding: 5px 20px;
         background-color: #222831;
-        outline: none;
         color: rgb(192, 192, 192);
         display: flex;
         align-items: center;
         gap: 50px;
         border-bottom: 1px gray solid;
-
-        input {
-          background-color: #222831;
-          border: none;
-          outline: none;
-          color: rgb(218, 210, 210);
-          &::placeholder {
-            color: rgb(167, 167, 167);
+        display: flex;
+        .searchForm {
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+          input {
+            width: 40%;
+            background-color: transparent;
+            border: none;
+            color: white;
+            outline: none;
+            &::placeholder {
+              color: #ddddf7;
+            }
+          }
+          button {
+            background-color: rgb(0, 173, 181);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
           }
         }
+
         .userChat {
           display: flex;
           width: 30%;
@@ -364,7 +395,7 @@
 
       .chats {
         display: flex;
-        gap: 40px;
+        gap: 30px;
         max-width: 440px;
         padding: 0 5px;
         @include mobile-max {
@@ -496,7 +527,7 @@
         height: calc(100% - 130px);
         overflow-y: scroll;
         @include mobile {
-          height: calc(100% - 237px);
+          height: calc(100% - 260px);
         }
         .message {
           display: flex;

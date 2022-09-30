@@ -1,9 +1,10 @@
 {
-  "homepage": "http://furkanevin.github.io/CHAD",
   "name": "booking",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@iconscout/react-unicons": "^1.1.6",
+    "@iconscout/unicons": "^4.0.1",
     "@splidejs/react-splide": "^0.7.11",
     "@splidejs/splide": "^4.1.2",
     "@testing-library/jest-dom": "^5.16.4",
@@ -20,8 +21,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build", 
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

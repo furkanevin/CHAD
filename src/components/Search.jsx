@@ -12,6 +12,7 @@ import {
 } from 'firebase/firestore';
 import { db } from '../firebase';
 import { AuthContext } from '../context/AuthContext';
+import { UilSearch } from '@iconscout/react-unicons';
 const Search = () => {
   const [username, setUsername] = useState('');
   const [user, setUser] = useState(null);
@@ -87,6 +88,9 @@ const Search = () => {
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
+        <button type="submit" onClick={handleSearch}>
+          <UilSearch size="20" color="white" />
+        </button>
       </div>
       {err && <span>User not found!</span>}
       {user && (
