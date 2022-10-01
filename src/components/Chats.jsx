@@ -29,7 +29,7 @@ const Chats = () => {
   };
 
   return (
-    <div className="chats">
+    <div className="chats" id="scroll1">
       {Object.entries(chats)
         ?.sort((a, b) => b[1].date - a[1].date)
         .map((chat) => (

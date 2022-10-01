@@ -1,21 +1,21 @@
-import React, { useContext, useState } from "react";
-import Img from "../img/img.png";
-import Attach from "../img/attach.png";
-import { AuthContext } from "../context/AuthContext";
-import { ChatContext } from "../context/ChatContext";
+import React, { useContext, useState } from 'react';
+import Img from '../img/img.png';
+import Attach from '../img/attach.png';
+import { AuthContext } from '../context/AuthContext';
+import { ChatContext } from '../context/ChatContext';
 import {
   arrayUnion,
   doc,
   serverTimestamp,
   Timestamp,
   updateDoc,
-} from "firebase/firestore";
-import { db, storage } from "../firebase";
-import { v4 as uuid } from "uuid";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+} from 'firebase/firestore';
+import { db, storage } from '../firebase';
+import { v4 as uuid } from 'uuid';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
 const Input = () => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [img, setImg] = useState(null);
 
   const { currentUser } = useContext(AuthContext);
@@ -33,7 +33,7 @@ const Input = () => {
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateDoc(doc(db, "chats", data.chatId), {
+            await updateDoc(doc(db, 'chats', data.chatId), {
               messages: arrayUnion({
                 id: uuid(),
                 text,
@@ -46,7 +46,7 @@ const Input = () => {
         }
       );
     } else {
-      await updateDoc(doc(db, "chats", data.chatId), {
+      await updateDoc(doc(db, 'chats', data.chatId), {
         messages: arrayUnion({
           id: uuid(),
           text,
@@ -56,21 +56,21 @@ const Input = () => {
       });
     }
 
-    await updateDoc(doc(db, "userChats", currentUser.uid), {
-      [data.chatId + ".lastMessage"]: {
+    await updateDoc(doc(db, 'userChats', currentUser.uid), {
+      [data.chatId + '.lastMessage']: {
         text,
       },
-      [data.chatId + ".date"]: serverTimestamp(),
+      [data.chatId + '.date']: serverTimestamp(),
     });
 
-    await updateDoc(doc(db, "userChats", data.user.uid), {
-      [data.chatId + ".lastMessage"]: {
+    await updateDoc(doc(db, 'userChats', data.user.uid), {
+      [data.chatId + '.lastMessage']: {
         text,
       },
-      [data.chatId + ".date"]: serverTimestamp(),
+      [data.chatId + '.date']: serverTimestamp(),
     });
 
-    setText("");
+    setText('');
     setImg(null);
   };
   return (
@@ -82,10 +82,9 @@ const Input = () => {
         value={text}
       />
       <div className="send">
-        <img src={Attach} alt="" />
         <input
           type="file"
-          style={{ display: "none" }}
+          style={{ display: 'none' }}
           id="file"
           onChange={(e) => setImg(e.target.files[0])}
         />
